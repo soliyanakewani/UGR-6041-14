@@ -1,0 +1,393 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 10px; 
+  max-width: 100%; 
+  margin: 0%; 
+  padding: 0px;
+  text-align: center;
+  align-items: center;
+  background-color: #D0A2F7;
+  font-size: 0.5em;
+  border-bottom: 2px solid transparent;
+  font-family: sans-serif;
+  border: 2px solid gray;
+}
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #E5D4FF;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .header {
+    background-color: #D0A2F7;
+    padding: 25px;
+    text-align: center;
+    border: 2px solid gray;
+    display: grid;
+    grid-template-columns: 1fr ;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .navigation {
+    display: grid;
+    grid-template-columns: 1fr; 
+    align-items: center;
+  }
+  
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px; 
+    justify-content: center; 
+    text-align: center;
+    align-items: center ; 
+    z-index: 1;
+    transition: 0.5s;
+  }
+  
+  .menu li {
+    list-style-type: none;
+  }
+  
+  .menu li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 40px 25px;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  .menu li a:hover {
+    box-shadow: 0 -5px 0px #fff inset, 500px 0 0 rgba(255, 255, 255, 0.03) inset;
+    padding: 15px 15px 25px 15px;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0px;
+    background-color: #D0A2F7;
+    border: 2px solid gray;
+  }
+  .hamburger {
+    position: relative;
+    width: 30px;
+    height: 4px;
+    background: black;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+  .hamburger:before,
+  .hamburger:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    background: black;
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 30px;
+    top: 0; 
+}
+
+.hamburger:before {
+    top: -10px;
+}
+
+.hamburger:after {
+    top: 10px;
+}
+.toggle-menu {
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  z-index: 3;
+  cursor: pointer;
+  opacity: 0;
+  padding: 0px;
+}
+
+.navigation input:checked ~ .hamburger {
+  background: transparent;
+  padding: 0px;
+}
+
+.navigation input:checked ~ .hamburger:before {
+  top: 0;
+  transform: rotate(-45deg);
+  width: 30px;
+  padding: 0;
+}
+
+.navigation input:checked ~ .hamburger:after {
+  top: 0;
+  transform: rotate(45deg);
+  width: 30px;
+  padding: 0;
+}
+
+.navigation input:checked ~ .menu {
+  right: 0;
+  box-shadow: -20px 0 40px rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 9000px) {
+  .hamburger,
+  .toggle-menu {
+      display: block;
+  }
+  .header {
+      padding: 10px;
+  }
+  .menu {
+      justify-content: center;
+      
+      align-items:start;
+      position: fixed;
+      top: 0;
+      right: -300px;
+      background:#F1EAFF;
+      width: 200px;
+      height: 100%;
+      padding-top: 0px;
+  }
+  .menu li {
+      width: 80%;
+  }
+  .menu li a,
+  .menu li a:hover {
+      padding: 0px;
+      font-size: 2em;
+      
+      box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1) inset;
+  }
+}
+
+
+.menu {
+  grid-area: menu;
+  
+}
+
+.main {
+  text-align: center;
+}
+
+  
+  .item {
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  a:hover {
+    color: red;
+  }
+  
+  hr {
+    border-color: grey;
+    border-width: 5px;
+    margin: 10px 0;
+    border-style: dotted none none;
+  }
+  #logo {
+    display: grid;
+    grid-template-columns:0.8em;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+    width: 30px;
+    height: 40px;
+    border-radius: 100%;
+  }
+  
+  
+  #images {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 10px;
+    width: 280px;
+    height: 400px;
+    border: 2px solid #2a2c09;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .address {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0px;
+    flex: 1;
+    float: left;
+  }
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 10px; 
+    background-color:  #D0A2F7; 
+    padding: 30px; 
+  }
+
+  .contact address{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+  
+  .rights, .contact {
+    align-items: start;
+    font-size: xx-small;
+    
+  }
+  .email{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+
+  }
+  #phone{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+  .footer aside {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    align-items: center;
+    padding: 0;
+    justify-content: space-between;
+    float: left;
+  }
+  .rights{
+    display: grid;
+    align-items: center;
+  }
+  .phone {
+    display: grid;
+    align-items: center;
+  }
+  
+.phone  img {
+    max-width: 100%;
+    margin-right: 20px;
+  }
+  
+
+  
+.email {
+    display: grid;
+    align-items: center;
+  }
+  
+.email img {
+    max-width: 100%;
+    margin-right: 20px;
+  }
+  
+
+  /* About Me */
+#video {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 300px;
+    height: 300px;
+  }
+  
+  /* Hobby */
+  #caption {
+    text-align: start;
+  }
+  
+  /* Resume */
+  #larger-image {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 500px;
+    height: 400px;
+  }
+  
+  .resume {
+    padding: 0;
+    margin: 0;
+  }
+  /* Table */
+table {
+    width: 3px;
+    border-collapse: collapse;
+    margin-top: 5px; 
+  }
+  
+  /* Table Cells */
+  th, td {
+    padding: 0px; 
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.8em;
+  }
+  
+  /* Table Header */
+  th {
+    background-color: #E7BCDE;
+  }
+  
+  /* Alternating Row Colors */
+  tr:nth-child(even) {
+    background-color: #E7BCDE;
+  }
+  
+  /* Hover Effect */
+  tr:hover {
+    background-color: #E7BCDE;
+  }
+  #logox {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 120px;
+    height: 150px;
+    border-radius: 100%;
+    text-align: end;
+  }
+  
+  .instagram,
+  .email,
+  .telegram {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .instagram img,
+  .email img,
+  .telegram img {
+    max-width: 100%;
+  }
+  
+  .instagram p,
+  .email p,
+  .telegram p {
+    margin: 0;
+  }
+  
